@@ -10,11 +10,8 @@ import profile from './controllers/profile.js'
 const db = knex({
     client: 'pg',
     connection: {
-      host : 'postgresql-corrugated-06967',
-      port : 5432,
-      user : 'postgres',
-      password : 'Miniman009',
-      database : 'smart-brain'
+      host : process.env.DATABASE_URL,
+      ssl: true
     }
   });
 
