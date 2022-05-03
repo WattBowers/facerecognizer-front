@@ -7,10 +7,6 @@ import register from './controllers/register.js';
 import image from './controllers/image.js';
 import profile from './controllers/profile.js'
 
-const app = express();
-app.use(express.json());
-app.use(cors())
-
 const db = knex({
     client: 'pg',
     connection: {
@@ -20,6 +16,10 @@ const db = knex({
       }
     }
   });
+
+const app = express();
+app.use(express.json());
+app.use(cors())
 
 app.get('/', (req, res)=> {
     res.send('success');
