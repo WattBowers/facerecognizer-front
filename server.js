@@ -22,6 +22,7 @@ const app = express();
 app.use(express.json());
 app.use(cors())
 
+//adding a comment to see what happens on github
 app.get('/', (req, res)=> {
     res.send('success');
 })
