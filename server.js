@@ -20,8 +20,9 @@ const app = express();
 app.use(express.json());
 app.use(cors())
 
-//adding a comment to see what happens on github
-app.get('/', (req, res)=> { res.send(db.users + 'success') })
+app.get('/', (req, res)=> {
+    res.send('success');
+})
 
 app.post('/signin', (req, res) => { signin.handleSignin(req, res, db, bcrypt)})
 
@@ -31,8 +32,4 @@ app.get('/profile/:id' , (req, res) => { profile.handleProfile(req, res)})
 
 app.put('/image', (req, res) => { image.handleImage(req, res, db)})
 
-let port = process.env.PORT;
-if (port == null || port == "") {
-  port = 8000;
-}
-app.listen(port);
+app.listen(process.env.PORT || 3000);
