@@ -2,10 +2,10 @@ import express from 'express';
 import bcrypt from 'bcrypt-nodejs';
 import cors from 'cors';
 import knex from 'knex';
-import signin from './controllers/signin.js';
-import register from './controllers/register.js';
-import image from './controllers/image.js';
-import profile from './controllers/profile.js';
+import signin from './controllers/signin';
+import register from './controllers/register';
+import image from './controllers/image';
+import profile from './controllers/profile';
 
 
 const db = knex({
