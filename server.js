@@ -17,7 +17,8 @@ const db = knex({
   });
 
 const app = express();
-app.use(cors())
+app.use(cors());
+app.options('*', cors());
 app.use(express.json());
 
 
