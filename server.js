@@ -1,11 +1,11 @@
-import express from 'express'
-import bcrypt from 'bcrypt-nodejs'
+import express from 'express';
+import bcrypt from 'bcrypt-nodejs';
 import cors from 'cors';
 import knex from 'knex';
 import signin from './controllers/signin.js';
 import register from './controllers/register.js';
 import image from './controllers/image.js';
-import profile from './controllers/profile.js'
+import profile from './controllers/profile.js';
 
 
 const db = knex({
@@ -17,13 +17,17 @@ const db = knex({
   });
 
 const app = express();
-app.use(express.json());
 app.use(cors())
+app.use(express.json());
+
 
 app.get('/', (req, res)=> {  
   res.send('success');
 })
 
+app.get('/test', (req, res)=> {
+  res.send('this works')
+})
 app.post('/signin', (req, res) => { signin.handleSignin(req, res, db, bcrypt)})
 
 app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt)})
