@@ -62,7 +62,7 @@ class App extends React.Component {
   componentDidMount() {
     fetch('https://stark-tor-20383.herokuapp.com/')
       .then(response => response.json())
-      .then(console.log)
+      .then(console.log('were on'))
   }
 
   calculateFaceLocation = (data) => {
@@ -93,7 +93,9 @@ class App extends React.Component {
         if (response) {
           fetch('https://stark-tor-20383.herokuapp.com/image', {
             method: 'put',
-            headers: {'Content-Type': 'application/json'},
+            headers: {'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                      },
             body: JSON.stringify({
               id: this.state.user.id
             })
