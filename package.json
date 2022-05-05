@@ -14,7 +14,8 @@
     "react-tsparticles": "^1.43.1",
     "serve": "^13.0.2",
     "tachyons": "^4.12.0",
-    "web-vitals": "^2.1.4"
+    "web-vitals": "^2.1.4",
+    "cross-env": "^7.0.3"
   },
   "scripts": {
     "start": "cross-env GENERATE_SOURCEMAP=false serve -s build",
@@ -41,6 +42,6 @@
     ]
   },
   "devDependencies": {
-    "cross-env": "^7.0.3"
+    
   }
 }
