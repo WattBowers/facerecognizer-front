@@ -20,7 +20,8 @@ const db = knex({
 
 const app = express();
 app.use(cors({
-  origin: 'https://stark-tor-20383.herokuapp.com/register'
+  origin: 'https://stark-tor-20383.herokuapp.com/register',
+  origin: 'https://stark-tor-20383.herokuapp.com'
 }));
 app.use(express.json());
 
