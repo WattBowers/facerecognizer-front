@@ -9,13 +9,11 @@ import Clarifai from 'clarifai';
 import FaceRecognition from './components/FaceRecognition/FaceRecognition';
 import Card from './components/Card/Card';
 import Register from './components/Register/Register';
-import cors from 'cors'
 
 const app = new Clarifai.App({
   apiKey: '889e7b1746a946a2b40038ced5364a66'
 });
 
-app.use(cors())
 class App extends React.Component {
   constructor() {
     super();
