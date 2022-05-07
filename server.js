@@ -19,8 +19,9 @@ const db = knex({
     })
 
 const app = express();
-app.use(cors());
-app.options('*', cors());
+app.use(cors({
+  origin: 'https://stark-tor-20383.herokuapp.com/register'
+}));
 app.use(express.json());
 
 
