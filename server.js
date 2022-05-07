@@ -20,7 +20,7 @@ const db = knex({
 
 const app = express();
 app.use(cors({
-  origin: 'https://watbow-facerecognizer.herokuapp.com'
+  origin: '*'
 }));
 app.use(express.json());
 
