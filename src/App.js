@@ -59,7 +59,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('https://stark-tor-20383.herokuapp.com/')
+    fetch('https://stark-tor-20383.herokuapp.com')
       .then(response => response.json())
       .then(console.log('were on'))
   }
