@@ -67,23 +67,17 @@ class App extends React.Component {
       .then(console.log('were on'))
   }
 
-  calculateFaceLocation = (data) => { 
+  calculateFaceLocation = (data) => {
+    const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
     const image = document.getElementById('inputimage');
     const width = Number(image.width);
     const height = Number(image.height);
-    data.forEach(element => {
-      const clarifaiFace = element.region_info.bounding_box;
-      return {
-        leftCol: clarifaiFace.left_col * width,
-        topRow: clarifaiFace.top_row * height,
-        rightCol: width - (clarifaiFace.right_col * width),
-        bottomRow: height - (clarifaiFace.bottom_row * height)
-      }
-      //faceList.push(face)
-      //console.log(faceList)
-      //return(face);
-    });
-    
+    return {
+      leftCol: clarifaiFace.left_col * width,
+      topRow: clarifaiFace.top_row * height,
+      rightCol: width - (clarifaiFace.right_col * width),
+      bottomRow: height - (clarifaiFace.bottom_row * height)
+    }
   }
   
 
@@ -115,8 +109,7 @@ class App extends React.Component {
             
           })
       }
-      console.log(response.outputs[0].data.regions)
-      this.displayFaceBox(this.calculateFaceLocation(response.outputs[0].data.regions)); 
+      this.displayFaceBox(this.calculateFaceLocation(response))
       
     })
     .catch(err => console.log(err));
