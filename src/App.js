@@ -79,7 +79,7 @@ class App extends React.Component {
         rightCol: width - (clarifaiFace.right_col * width),
         bottomRow: height - (clarifaiFace.bottom_row * height)
       }
-      faceList.push(face)
+      faceList.push({face})
       console.log('face' + face);
     });
     
