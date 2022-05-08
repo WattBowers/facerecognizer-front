@@ -40,7 +40,7 @@ class App extends React.Component {
     this.setState(
       {input: '',
        imageUrl: '',
-       box: {},
+       box: [],
        user: {
           id: '',
           name: '',
@@ -109,6 +109,7 @@ class App extends React.Component {
             
           })
       }
+      console.log(response.outputs[0].data.regions)
       this.displayFaceBox(response.outputs[0].data.regions); 
       
     })
@@ -121,14 +122,14 @@ class App extends React.Component {
   
 
   render() {
-    const particlesInit = (main) => {
-      console.log(main);
-  
-    };
-  
-    const particlesLoaded = (container) => {
-      console.log(container);
-    };
+//    const particlesInit = (main) => {
+//      console.log(main);
+//  
+//    };
+//  
+//    const particlesLoaded = (container) => {
+//      console.log(container);
+//    };
     
     return (
       <div className='App'>
