@@ -82,7 +82,7 @@ class App extends React.Component {
       faceList.push(face)
       console.log(faceList)
     });
-    return(faceList);
+    return(face);
   }
   
 
