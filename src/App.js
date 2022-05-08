@@ -88,7 +88,7 @@ class App extends React.Component {
   }
   
   onButtonSubmit = () => {
-    faceList = [];
+    let faceList = [];
     this.setState({imageUrl: this.state.input})
     app.models.predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
     .then(response => {
