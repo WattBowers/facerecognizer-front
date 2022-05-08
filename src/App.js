@@ -82,7 +82,7 @@ class App extends React.Component {
   
 
   displayFaceBox = (box) => {
-    this.setState({box: faceList});
+    this.setState({box: box});
   }
 
   onInputChange = (event) => {
@@ -109,11 +109,8 @@ class App extends React.Component {
             
           })
       }
-      response.outputs[0].data.regions.forEach(element => {
-        faceList.push(this.calculateFaceLocation(element));
-        console.log(faceList);
-      })
-      this.displayFaceBox(faceList);
+      this.displayFaceBox(response.outputs[0].data.regions); 
+      
     })
     .catch(err => console.log(err));
   }
