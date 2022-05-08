@@ -14,7 +14,7 @@ const app = new Clarifai.App({
   apiKey: '889e7b1746a946a2b40038ced5364a66'
 });
 
-let faceList = {};
+let faceList = [];
 class App extends React.Component {
   constructor() {
     super();
@@ -79,7 +79,7 @@ class App extends React.Component {
         rightCol: width - (clarifaiFace.right_col * width),
         bottomRow: height - (clarifaiFace.bottom_row * height)
       }
-      faceList.push({face})
+      faceList.push(face)
       console.log('face' + face);
     });
     
