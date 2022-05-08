@@ -81,8 +81,9 @@ class App extends React.Component {
       }
       faceList.push(face)
       console.log(faceList)
+      return(face);
     });
-    return(face);
+    
   }
   
 
