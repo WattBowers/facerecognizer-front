@@ -110,7 +110,7 @@ class App extends React.Component {
           })
       }
       console.log(response.outputs[0].data.regions)
-      this.displayFaceBox(response.outputs[0].data.regions); 
+      this.displayFaceBox(this.calculateFaceLocation(response.outputs[0].data.regions)); 
       
     })
     .catch(err => console.log(err));
