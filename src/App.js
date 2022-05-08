@@ -14,7 +14,7 @@ const app = new Clarifai.App({
   apiKey: '889e7b1746a946a2b40038ced5364a66'
 });
 
-let faceList = [];
+let faceList = {};
 class App extends React.Component {
   constructor() {
     super();
@@ -68,16 +68,22 @@ class App extends React.Component {
   }
 
   calculateFaceLocation = (data) => { 
-    const clarifaiFace = data.region_info.bounding_box;
-    const image = document.getElementById('inputimage');
-    const width = Number(image.width);
-    const height = Number(image.height);
-    return {
-      leftCol: clarifaiFace.left_col * width,
-      topRow: clarifaiFace.top_row * height,
-      rightCol: width - (clarifaiFace.right_col * width),
-      bottomRow: height - (clarifaiFace.bottom_row * height)
-    }
+    data.forEach(element => {
+      const clarifaiFace = element.region_info.bounding_box;
+      const image = document.getElementById('inputimage');
+      const width = Number(image.width);
+      const height = Number(image.height);
+      let face = {
+        leftCol: clarifaiFace.left_col * width,
+        topRow: clarifaiFace.top_row * height,
+        rightCol: width - (clarifaiFace.right_col * width),
+        bottomRow: height - (clarifaiFace.bottom_row * height)
+      }
+      faceList.push(face)
+      console.log('face' + face);
+    });
+    
+    
   }
   
 
