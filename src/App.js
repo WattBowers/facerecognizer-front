@@ -64,8 +64,8 @@ class App extends React.Component {
       .then(console.log('were on'))
   }
 
-  calculateFaceLocation = (data) => {
-    const clarifaiFace = data.outputs[0].data.regions[0].region_info.bounding_box;
+  calculateFaceLocation = (data) => { 
+    const clarifaiFace = data.region_info.bounding_box;
     const image = document.getElementById('inputimage');
     const width = Number(image.width);
     const height = Number(image.height);
@@ -105,7 +105,10 @@ class App extends React.Component {
           })
       }
       for(let i = 0; i < response.outputs.data.regions.length; i++) {
-        this.displayFaceBox(this.calculateFaceLocation(response.outputs.data.regions[i]))
+        
+      }
+      for (let i = 0; i < response.outputs.data.regions.length; i++) {
+        this.displayFaceBox(this.calculateFaceLocation(response.outputs[0].data.regions[i]))
       }
       
     })
