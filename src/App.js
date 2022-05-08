@@ -114,6 +114,7 @@ class App extends React.Component {
           })
       }
       console.log(response.outputs[0].data.regions)
+      console.log(this.calculateFaceLocation(response.outputs[0].data.regions));
       this.displayFaceBox(this.calculateFaceLocation(response.outputs[0].data.regions)); 
       
     })
