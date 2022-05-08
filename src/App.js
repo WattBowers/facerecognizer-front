@@ -73,7 +73,7 @@ class App extends React.Component {
     const height = Number(image.height);
     data.forEach(element => {
       const clarifaiFace = element.region_info.bounding_box;
-      let face = {
+      return {
         leftCol: clarifaiFace.left_col * width,
         topRow: clarifaiFace.top_row * height,
         rightCol: width - (clarifaiFace.right_col * width),
