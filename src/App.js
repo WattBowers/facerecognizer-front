@@ -14,6 +14,7 @@ const app = new Clarifai.App({
   apiKey: '889e7b1746a946a2b40038ced5364a66'
 });
 
+let faceList = [];
 class App extends React.Component {
   constructor() {
     super();
@@ -79,6 +80,7 @@ class App extends React.Component {
     }
   }
   
+
   displayFaceBox = (box) => {
     this.setState({box: faceList});
   }
@@ -88,7 +90,7 @@ class App extends React.Component {
   }
   
   onButtonSubmit = () => {
-    let faceList = [];
+   
     this.setState({imageUrl: this.state.input})
     app.models.predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
     .then(response => {
