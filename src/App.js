@@ -122,14 +122,14 @@ class App extends React.Component {
   
 
   render() {
-//    const particlesInit = (main) => {
-//      console.log(main);
-//  
-//    };
-//  
-//    const particlesLoaded = (container) => {
-//      console.log(container);
-//    };
+    const particlesInit = (main) => {
+      console.log('');
+  
+    };
+  
+    const particlesLoaded = (container) => {
+      console.log('');
+    };
     
     return (
       <div className='App'>
