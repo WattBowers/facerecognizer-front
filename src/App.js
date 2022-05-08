@@ -20,7 +20,7 @@ class App extends React.Component {
     this.state = {
       input: '',
       imageUrl: '',
-      box: {},
+      box: [],
       route: 'sign in',
       isSignedIn: false,
       user: {
@@ -33,6 +33,8 @@ class App extends React.Component {
     }
   }
 
+
+  
   resetUser = () => {
     this.setState(
       {input: '',
@@ -78,7 +80,7 @@ class App extends React.Component {
   }
   
   displayFaceBox = (box) => {
-    this.setState({box: box});
+    this.setState({box: faceList});
   }
 
   onInputChange = (event) => {
@@ -86,6 +88,7 @@ class App extends React.Component {
   }
   
   onButtonSubmit = () => {
+    faceList = [];
     this.setState({imageUrl: this.state.input})
     app.models.predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
     .then(response => {
@@ -105,8 +108,9 @@ class App extends React.Component {
           })
       }
       response.outputs[0].data.regions.forEach(element => {
-        this.displayFaceBox(this.calculateFaceLocation(element));
+        faceList.push(this.calculateFaceLocation(element));
       })
+      this.displayFaceBox(faceList);
     })
     .catch(err => console.log(err));
   }
