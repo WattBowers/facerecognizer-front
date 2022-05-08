@@ -59,7 +59,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('https://stark-tor-20383.herokuapp.com')
+    fetch('https://stark-tor-20383.herokuapp.com/')
       .then(response => response.json())
       .then(console.log('were on'))
   }
@@ -89,7 +89,8 @@ class App extends React.Component {
     this.setState({imageUrl: this.state.input})
     app.models.predict(Clarifai.FACE_DETECT_MODEL, this.state.input)
     .then(response => {
-        if (response) {
+      console.log(response)  
+      if (response) {
           fetch('https://stark-tor-20383.herokuapp.com/image', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
