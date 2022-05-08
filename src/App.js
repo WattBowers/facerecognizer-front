@@ -21,7 +21,7 @@ class App extends React.Component {
     this.state = {
       input: '',
       imageUrl: '',
-      box: [],
+      box: {},
       route: 'sign in',
       isSignedIn: false,
       user: {
