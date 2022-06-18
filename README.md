@@ -1,18 +1,13 @@
-# Getting Started with Create React App
+# Face-Recognizer
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Details
 
-In the project directory, you can run:
+This project is built using React, along with the Clarifai api to detect faces in a photo. This is the front end of the app, you can find the code for the back end of the framework here: https://github.com/WattBowers/facerecognizer-api. This project was built with the help from the great mentors at Zero to Mastery on Udemy. 
 
-### `npm start`
+### What I learned
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Completing this project was one of the most difficult and rewarding experiances I have overcome in recent memory. From learning how to implement API calls with asynchronous Javascript. To spending hours trying to debug errors with hosting services. Finishing this project from beggining to end has taught me an invaluable lesson in how to debug problems, be a self-sufficient coder, and how to come up with different and interesting ways to solve problems. There were numerous times when completing this project where I had that "Aha!" moment where the blocks alligned and I was able to make real, and meaningful progress towards fluency in programming. 
 
 ### `npm test`
 
